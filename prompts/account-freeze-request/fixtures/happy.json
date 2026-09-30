@@ -1,0 +1,6 @@
+{
+  "name": "happy path — clear fraud, full freeze",
+  "input": "tickets/sample-1.json",
+  "expect": { "action": "freeze", "reason_code": "fraud_suspected",
+              "affected_accounts": ["AC-5510029", "AC-5510030"] }
+}

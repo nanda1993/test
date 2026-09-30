@@ -1,0 +1,35 @@
+{
+  "_comment": "STEP 1 — the mess. Five developers, one ticket type (T-4471), five output shapes. Downstream routing code defensively parses all five.",
+  "dev_a_branch_feature/freeze-handler": {
+    "ticketId": "T-4471",
+    "decision": "FREEZE",
+    "accounts": ["AC-5510029", "AC-5510030"],
+    "why": "customer reports unauthorised transactions"
+  },
+  "dev_b_branch_fix/freeze-v2": {
+    "ticket": { "id": "T-4471" },
+    "outcome": { "action": "freeze_all", "confidence": 0.91 },
+    "affected": "AC-5510029,AC-5510030",
+    "reason": "fraud"
+  },
+  "dev_c_branch_feature/ticket-triage": {
+    "id": "T-4471",
+    "result": "frozen",
+    "account_list": [{ "number": "AC-5510029" }, { "number": "AC-5510030" }],
+    "reason_code": 3,
+    "notes": "Three disputed txns totalling 121700 INR. Card still in possession."
+  },
+  "dev_d_branch_spike/llm-freeze": {
+    "ticket_id": "T-4471",
+    "action_taken": true,
+    "freeze_type": "full",
+    "summary": "Unauthorised transactions reported; account frozen pending fraud desk review."
+  },
+  "dev_e_branch_feature/freeze-api": {
+    "ticketRef": "T-4471",
+    "status": "ACTION_REQUIRED",
+    "recommendation": { "type": "FREEZE", "scope": "ALL_LINKED" },
+    "evidence": ["3 disputed transactions", "beneficiary not recognised", "card not lost"],
+    "reasonCode": "FRAUD_SUSPECTED"
+  }
+}

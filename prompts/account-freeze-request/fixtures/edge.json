@@ -1,0 +1,6 @@
+{
+  "name": "edge case — standing instructions force partial_freeze (KB-114 §5.2)",
+  "input": "tickets/sample-2.json",
+  "expect": { "action": "partial_freeze", "reason_code": "customer_request",
+              "policy_reference": "KB-114 §5.2" }
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Account Freeze Request Resolution",
+  "description": "Normalized output for account-freeze-request ticket resolution across multiple decision systems",
+  "type": "object",
+  "required": ["ticket_id", "action", "affected_accounts", "reason_code", "evidence_summary"],
+  "properties": {
+    "ticket_id": {
+      "type": "string",
+      "pattern": "^T-\\d+$",
+      "description": "Ticket identifier (e.g., 'T-4471')"
+    },
+    "action": {
+      "type": "string",
+      "enum": ["freeze", "partial_freeze", "deny"],
+      "description": "Resolution action. Normalizes: 'FREEZE'→freeze, 'freeze_all'→freeze, 'frozen'→freeze, 'full'→freeze, 'FREEZE'→freeze"
+    },
+    "affected_accounts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^AC-\\d+$"
+      },
+      "minItems": 1,
+      "description": "Account numbers affected by this decision. Always an array of strings; normalizes comma-separated or nested account representations"
+    },
+    "reason_code": {
+      "type": "string",
+      "enum": ["fraud_suspected", "customer_request", "court_order", "insufficient_evidence"],
+      "description": "Categorical reason for decision. Normalizes: numeric codes→enum, one-word reasons→categorical values"
+    },
+    "evidence_summary": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "Concise summary of supporting evidence (max 300 characters). Consolidates narrative 'why', 'notes', 'summary', or array 'evidence' fields"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Optional confidence score (0–1) for the decision"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ACTION_REQUIRED", "COMPLETED", "PENDING_REVIEW"],
+      "description": "Optional resolution status"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "Optional additional context (e.g., 'Card still in possession', 'pending fraud desk review')"
+    }
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "ticket_id": "T-4471",
+      "action": "freeze",
+      "affected_accounts": ["AC-5510029", "AC-5510030"],
+      "reason_code": "fraud_suspected",
+      "evidence_summary": "3 disputed transactions totalling 121700 INR. Card still in possession."
+    },
+    {
+      "ticket_id": "T-4471",
+      "action": "partial_freeze",
+      "affected_accounts": ["AC-5510029"],
+      "reason_code": "customer_request",
+      "evidence_summary": "Customer requested temporary freeze pending investigation.",
+      "confidence": 0.91,
+      "status": "COMPLETED"
+    }
+  ]
+}

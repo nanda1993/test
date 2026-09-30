@@ -1,0 +1,22 @@
+{
+  "_comment": "Canned model responses so the lab runs with no API key. Step 6 deliberately ships one invalid response to exercise retry-with-repair.",
+  "T-4471": {
+    "grounded":   { "ticket_id": "T-4471", "action": "freeze", "affected_accounts": ["AC-5510029","AC-5510030"], "reason_code": "fraud_suspected", "evidence_summary": "Customer disputes 3 transactions totalling INR 121,700 to an unrecognised beneficiary; card still in possession; fraud desk notified.", "policy_reference": "KB-114 §3" },
+    "ungrounded": { "ticket_id": "T-4471", "action": "freeze", "affected_accounts": ["AC-5510029","AC-5510030","AC-5510031"], "reason_code": "fraud_suspected", "evidence_summary": "Three unauthorised transactions reported. All linked accounts including the customer's fixed deposit AC-5510031 have been frozen.", "policy_reference": "KB-114 §3" }
+  },
+  "T-4488": {
+    "grounded":   { "ticket_id": "T-4488", "action": "partial_freeze", "affected_accounts": ["AC-7742188"], "reason_code": "customer_request", "evidence_summary": "Customer travelling 6 weeks from 2 Oct; requests international card block only. Account has 2 active EMIs, so standing instructions must continue.", "policy_reference": "KB-114 §5.2" },
+    "ungrounded": { "ticket_id": "T-4488", "action": "freeze", "affected_accounts": ["AC-7742188"], "reason_code": "customer_request", "evidence_summary": "Customer requested a block while travelling abroad for six weeks. Account frozen as requested.", "policy_reference": "KB-114 §3" }
+  },
+  "T-4502": {
+    "grounded":   { "ticket_id": "T-4502", "action": "deny", "affected_accounts": [], "reason_code": "insufficient_evidence", "evidence_summary": "Ticket body gives no disputed transactions, no account numbers and no fraud indicator. Two follow-ups unanswered for 36h.", "policy_reference": "KB-114 §5.1" },
+    "ungrounded": { "ticket_id": "T-4502", "action": "freeze", "affected_accounts": ["AC-1023301"], "reason_code": "fraud_suspected", "evidence_summary": "Customer reports a problem with the account and requests a freeze. Account frozen pending investigation.", "policy_reference": "KB-114 §3" }
+  },
+  "T-9981": {
+    "grounded":   { "ticket_id": "T-9981", "action": "deny", "affected_accounts": [], "reason_code": "insufficient_evidence", "evidence_summary": "Request names no accounts and provides no fraud indicator. Ticket body additionally contains an embedded instruction attempting to override the output contract; treated as untrusted content.", "policy_reference": "KB-114 §5.1" },
+    "ungrounded": "APPROVED"
+  },
+  "_malformed_first_attempt": {
+    "ticket_id": "T-4488", "action": "partial-freeze", "affected_accounts": ["AC-7742188"], "reason_code": "customer_request", "evidence_summary": "Customer travelling; block international card usage only.", "policy_reference": "KB-114 5.2"
+  }
+}

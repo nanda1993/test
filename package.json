@@ -1,0 +1,11 @@
+{
+  "name": "dd1-prompt-lab",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DD1 \u2014 Prompt & Context Engineering for Developers. PwC Full-Stack AI track.",
+  "scripts": {
+    "run-prompt": "node scripts/run-prompt.js",
+    "test": "node scripts/test.js"
+  }
+}

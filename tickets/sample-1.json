@@ -1,0 +1,10 @@
+{
+  "ticket_id": "T-4471",
+  "type": "account-freeze-request",
+  "opened_at": "2026-09-24T09:12:00Z",
+  "channel": "phone",
+  "customer_id": "C-88120",
+  "body": "Caller says three transactions on his current account last night were not made by him. Amounts 42,000 / 18,500 / 61,200 INR to a beneficiary he does not recognise. He still has his card. Wants the account frozen immediately while it is investigated.",
+  "accounts_mentioned": ["AC-5510029", "AC-5510030"],
+  "agent_notes": "Caller verified via OTP and last-4. Sounded distressed. Flagged to fraud desk."
+}

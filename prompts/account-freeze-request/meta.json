@@ -1,0 +1,12 @@
+{
+  "ticket_type": "account-freeze-request",
+  "schema_version": "1.1.0",
+  "prompt_version": "1.1.0",
+  "owner": "payments-platform-squad",
+  "last_reviewed": "2026-09-30",
+  "model": "claude-sonnet-5",
+  "changelog": [
+    { "version": "1.0.0", "date": "2026-09-30", "note": "Initial canonical schema replacing five ad-hoc shapes." },
+    { "version": "1.1.0", "date": "2026-09-30", "note": "Step 5: added grounding (KB-114 + account snapshot) and required policy_reference." }
+  ]
+}

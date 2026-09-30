@@ -1,0 +1,10 @@
+{
+  "ticket_id": "T-4488",
+  "type": "account-freeze-request",
+  "opened_at": "2026-09-25T14:40:00Z",
+  "channel": "app",
+  "customer_id": "C-31955",
+  "body": "I am travelling abroad for six weeks from 2 Oct. Please block international card usage on my salary account but leave UPI and standing instructions working so my EMIs still go through. I do not want the whole account frozen.",
+  "accounts_mentioned": ["AC-7742188"],
+  "agent_notes": "No fraud indicators. Customer-initiated. Standing instructions active on this account."
+}

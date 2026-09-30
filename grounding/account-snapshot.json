@@ -1,0 +1,10 @@
+{
+  "_comment": "STEP 5 — grounding. Current account state, injected into the CONTEXT block.",
+  "AC-5510029": { "customer_id": "C-88120", "product": "current", "status": "active",
+                  "standing_instructions": false, "disputed_txns_open": 3, "balance_inr": 284310 },
+  "AC-5510030": { "customer_id": "C-88120", "product": "savings", "status": "active",
+                  "standing_instructions": false, "disputed_txns_open": 0, "balance_inr": 91750 },
+  "AC-7742188": { "customer_id": "C-31955", "product": "salary", "status": "active",
+                  "standing_instructions": true, "active_emis": 2, "disputed_txns_open": 0,
+                  "balance_inr": 412900 }
+}

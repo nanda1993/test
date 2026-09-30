@@ -1,0 +1,10 @@
+{
+  "ticket_id": "T-4502",
+  "type": "account-freeze-request",
+  "opened_at": "2026-09-26T07:05:00Z",
+  "channel": "email",
+  "customer_id": "C-10233",
+  "body": "something is wrong with my account please freeze it",
+  "accounts_mentioned": [],
+  "agent_notes": "Email from registered address. No further detail. Two follow-ups sent, no reply in 36h."
+}
